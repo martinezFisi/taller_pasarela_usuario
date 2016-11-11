@@ -24,7 +24,8 @@ public class Account implements Serializable {
 
 	@Id
 	protected Long id;
-
+	
+	@Column(name = "codigo")
 	protected String number;
 
 	@Column(name = "name")
