@@ -15,7 +15,7 @@ import javax.persistence.Table;
  * @author Paul Chapman
  */
 @Entity
-@Table(name = "T_ACCOUNT")
+@Table(name = "USUARIO")
 public class Account implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -24,13 +24,14 @@ public class Account implements Serializable {
 
 	@Id
 	protected Long id;
-
+	
+	@Column(name = "codigo")
 	protected String number;
 
 	@Column(name = "name")
 	protected String owner;
 
-	protected BigDecimal balance;
+//	protected BigDecimal balance;
 
 	/**
 	 * This is a very simple, and non-scalable solution to generating unique
@@ -49,14 +50,14 @@ public class Account implements Serializable {
 	 * Default constructor for JPA only.
 	 */
 	protected Account() {
-		balance = BigDecimal.ZERO;
+//		balance = BigDecimal.ZERO;
 	}
 
 	public Account(String number, String owner) {
 		id = getNextId();
 		this.number = number;
 		this.owner = owner;
-		balance = BigDecimal.ZERO;
+//		balance = BigDecimal.ZERO;
 	}
 
 	public long getId() {
@@ -89,21 +90,21 @@ public class Account implements Serializable {
 		this.owner = owner;
 	}
 
-	public BigDecimal getBalance() {
-		return balance.setScale(2, BigDecimal.ROUND_HALF_EVEN);
-	}
-
-	public void withdraw(BigDecimal amount) {
-		balance.subtract(amount);
-	}
-
-	public void deposit(BigDecimal amount) {
-		balance.add(amount);
-	}
+//	public BigDecimal getBalance() {
+//		return balance.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+//	}
+//
+//	public void withdraw(BigDecimal amount) {
+//		balance.subtract(amount);
+//	}
+//
+//	public void deposit(BigDecimal amount) {
+//		balance.add(amount);
+//	}
 
 	@Override
 	public String toString() {
-		return number + " [" + owner + "]: $" + balance;
+		return number + " [" + owner + "]: $";
 	}
 
 }
