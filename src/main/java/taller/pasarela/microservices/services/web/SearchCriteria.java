@@ -1,4 +1,4 @@
-package io.pivotal.microservices.services.web;
+package taller.pasarela.microservices.services.web;
 
 import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
@@ -50,7 +50,7 @@ public class SearchCriteria {
 						"Cannot specify account number and search text");
 			}
 		} else if (StringUtils.hasText(searchText)) {
-			; // Nothing to do
+			;
 		} else {
 			errors.rejectValue("accountNumber", "nonEmpty",
 					"Must specify either an account number or search text");
@@ -62,7 +62,6 @@ public class SearchCriteria {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return (StringUtils.hasText(accountNumber) ? "number: " + accountNumber
 				: "")
 				+ (StringUtils.hasText(searchText) ? " text: " + searchText

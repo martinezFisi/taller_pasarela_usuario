@@ -1,6 +1,4 @@
-package io.pivotal.microservices.services.web;
-
-import io.pivotal.microservices.services.web.Account;
+package taller.pasarela.microservices.services.web;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -16,12 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Client controller, fetches Account info from the microservice via
- * {@link WebAccountsService}.
- * 
- * @author Paul Chapman
- */
+import taller.pasarela.microservices.services.web.Account;
+
+
 @Controller
 public class WebAccountsController {
 

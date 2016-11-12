@@ -41,6 +41,6 @@ dependencies {
 }
 
 springBoot {
-    mainClass = "io.pivotal.microservices.services.Main"
+    mainClass = "taller.pasarela.microservices.services.Main"
 }
 

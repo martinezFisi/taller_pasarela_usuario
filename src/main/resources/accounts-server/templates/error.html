@@ -12,10 +12,6 @@
 <body>
 	<h1>An Error Has Occurred</h1>
 
-	<!--  As we are using Thymeleaf, you might consider using
-	      ${#httpServletRequest.requestURL}. But that returns the path
-	      to this error page.  Hence we explicitly add the url to the
-	      Model in some of the example code. -->
 	<p th:if="${url}">
 		<b>Page:</b> <span th:text="${url}">Page URL</span>
 	</p>
@@ -29,8 +25,6 @@
 			th:if="${error}" th:text="'('+${error}+')'">error ...</span>
 	</p>
 
-	<!--/* ${ex} is set by ourSimpleMappingExceptionResolver,
-	       ${exception} or ${message} are set internally by Spring Boot. */-->
 	<div
 		th:if="${ex} or ${exception} or (${message} and ${message.length() != 0})">
 		<b>Cause:</b> <span th:if="${ex}" th:text="${ex}">ex exception
