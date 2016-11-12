@@ -8,12 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- * Persistent account entity with JPA markup. Accounts are stored in an H2
- * relational database.
- * 
-
- */
 @Entity
 @Table(name = "USUARIO")
 public class Account implements Serializable {
@@ -37,26 +31,15 @@ public class Account implements Serializable {
 	@Column(name = "eap")
 	protected String eap;
 
-//	protected BigDecimal balance;
 
-	/**
-	 * This is a very simple, and non-scalable solution to generating unique
-	 * ids. Not recommended for a real application. Consider using the
-	 * <tt>@GeneratedValue</tt> annotation and a sequence to generate ids.
-	 * 
-	 * @return The next available id.
-	 */
 	protected static Long getNextId() {
 		synchronized (nextId) {
 			return nextId++;
 		}
 	}
 
-	/**
-	 * Default constructor for JPA only.
-	 */
+	
 	protected Account() {
-//		balance = BigDecimal.ZERO;
 	}
 
 	public Account(String number, String owner) {
