@@ -15,6 +15,8 @@ public class Account {
 	protected Long id;
 	protected String number;
 	protected String owner;
+	protected String email;
+	protected String eap;
 //	protected BigDecimal balance;
 
 	/**
@@ -53,6 +55,8 @@ public class Account {
 	protected void setOwner(String owner) {
 		this.owner = owner;
 	}
+	
+	
 
 //	public BigDecimal getBalance() {
 //		return balance.setScale(2, BigDecimal.ROUND_HALF_EVEN);
@@ -63,9 +67,26 @@ public class Account {
 //		balance.setScale(2, BigDecimal.ROUND_HALF_EVEN);
 //	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Override
 	public String toString() {
 		return number + " [" + owner + "]: $";
 	}
 
+	public String getEap() {
+		return eap;
+	}
+
+	public void setEap(String eap) {
+		this.eap = eap;
+	}
+
+	
 }

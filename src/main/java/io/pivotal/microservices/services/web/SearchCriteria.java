@@ -33,15 +33,15 @@ public class SearchCriteria {
 
 	public boolean validate(Errors errors) {
 		if (StringUtils.hasText(accountNumber)) {
-			if (accountNumber.length() != 9)
+			if (accountNumber.length() != 8)
 				errors.rejectValue("accountNumber", "badFormat",
-						"Account number should be 9 digits");
+						"Account number should be 8 digits");
 			else {
 				try {
 					Integer.parseInt(accountNumber);
 				} catch (NumberFormatException e) {
 					errors.rejectValue("accountNumber", "badFormat",
-							"Account number should be 9 digits");
+							"Account number should be 8 digits");
 				}
 			}
 

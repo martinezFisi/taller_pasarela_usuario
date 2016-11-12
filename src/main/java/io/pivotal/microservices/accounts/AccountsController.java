@@ -59,16 +59,7 @@ public class AccountsController {
 		}
 	}
 
-	/**
-	 * Fetch accounts with the specified name. A partial case-insensitive match
-	 * is supported. So <code>http://.../accounts/owner/a</code> will find any
-	 * accounts with upper or lower case 'a' in their name.
-	 * 
-	 * @param partialName
-	 * @return A non-null, non-empty set of accounts.
-	 * @throws AccountNotFoundException
-	 *             If there are no matches at all.
-	 */
+	
 	@RequestMapping("/accounts/owner/{name}")
 	public List<Account> byOwner(@PathVariable("name") String partialName) {
 		logger.info("accounts-service byOwner() invoked: "

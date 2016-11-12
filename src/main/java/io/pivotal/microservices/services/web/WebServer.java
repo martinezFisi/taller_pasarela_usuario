@@ -8,12 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * Accounts web-server. Works as a microservice client, fetching data from the
- * Account-Service. Uses the Discovery Server (Eureka) to find the microservice.
- * 
- * @author Paul Chapman
- */
+
 @SpringBootApplication
 @EnableDiscoveryClient
 @ComponentScan(useDefaultFilters = false) // Disable component scanner
@@ -39,7 +34,7 @@ public class WebServer {
 
 	/**
 	 * A customized RestTemplate that has the ribbon load balancer build in.
-	 * Note that prior to the "Brixton" 
+	 * Note that prior to the 
 	 * 
 	 * @return
 	 */

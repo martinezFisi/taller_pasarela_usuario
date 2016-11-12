@@ -12,7 +12,7 @@ import javax.persistence.Table;
  * Persistent account entity with JPA markup. Accounts are stored in an H2
  * relational database.
  * 
- * @author Paul Chapman
+
  */
 @Entity
 @Table(name = "USUARIO")
@@ -25,11 +25,17 @@ public class Account implements Serializable {
 	@Id
 	protected Long id;
 	
-	@Column(name = "codigo")
+	@Column(name = "code")
 	protected String number;
 
 	@Column(name = "name")
 	protected String owner;
+	
+	@Column(name = "email")
+	protected String email;
+	
+	@Column(name = "eap")
+	protected String eap;
 
 //	protected BigDecimal balance;
 
@@ -58,6 +64,14 @@ public class Account implements Serializable {
 		this.number = number;
 		this.owner = owner;
 //		balance = BigDecimal.ZERO;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public long getId() {
@@ -106,5 +120,15 @@ public class Account implements Serializable {
 	public String toString() {
 		return number + " [" + owner + "]: $";
 	}
+
+	public String getEap() {
+		return eap;
+	}
+
+	public void setEap(String eap) {
+		this.eap = eap;
+	}
+	
+	
 
 }

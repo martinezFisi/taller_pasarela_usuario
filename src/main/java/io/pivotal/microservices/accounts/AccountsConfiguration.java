@@ -53,16 +53,16 @@ public class AccountsConfiguration {
 
 		// Sanity check
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		List<Map<String, Object>> accounts = jdbcTemplate.queryForList("SELECT codigo FROM USUARIO");
+		List<Map<String, Object>> accounts = jdbcTemplate.queryForList("SELECT code FROM USUARIO");
 		logger.info("System has " + accounts.size() + " accounts");
 
 		// Populate with random balances
 //		Random rand = new Random();
 //
 //		for (Map<String, Object> item : accounts) {
-//			String number = (String) item.get("codigo");
+//			String number = (String) item.get("code");
 //			BigDecimal balance = new BigDecimal(rand.nextInt(10000000) / 100.0).setScale(2, BigDecimal.ROUND_HALF_UP);
-//			jdbcTemplate.update("UPDATE USUARIO SET balance = ? WHERE codigo = ?", balance, number);
+//			jdbcTemplate.update("UPDATE USUARIO SET balance = ? WHERE code = ?", balance, number);
 //		}
 
 		return dataSource;
