@@ -1,4 +1,4 @@
-package io.pivotal.microservices.accounts;
+package taller.pasarela.microservices.accounts;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -46,7 +46,6 @@ public class Account implements Serializable {
 		id = getNextId();
 		this.number = number;
 		this.owner = owner;
-//		balance = BigDecimal.ZERO;
 	}
 
 	public String getEmail() {
@@ -87,17 +86,7 @@ public class Account implements Serializable {
 		this.owner = owner;
 	}
 
-//	public BigDecimal getBalance() {
-//		return balance.setScale(2, BigDecimal.ROUND_HALF_EVEN);
-//	}
-//
-//	public void withdraw(BigDecimal amount) {
-//		balance.subtract(amount);
-//	}
-//
-//	public void deposit(BigDecimal amount) {
-//		balance.add(amount);
-//	}
+
 
 	@Override
 	public String toString() {

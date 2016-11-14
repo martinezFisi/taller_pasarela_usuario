@@ -1,4 +1,4 @@
-package io.pivotal.microservices.services.web;
+package taller.pasarela.microservices.services.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@ComponentScan(useDefaultFilters = false) // Disable component scanner
+@ComponentScan(useDefaultFilters = false) 
 public class WebServer {
 
 	/**
@@ -27,7 +27,6 @@ public class WebServer {
 	 *            Program arguments - ignored.
 	 */
 	public static void main(String[] args) {
-		// Tell server to look for web-server.properties or web-server.yml
 		System.setProperty("spring.config.name", "web-server");
 		SpringApplication.run(WebServer.class, args);
 	}

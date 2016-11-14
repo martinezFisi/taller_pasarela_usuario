@@ -1,4 +1,4 @@
-package io.pivotal.microservices.accounts;
+package taller.pasarela.microservices.accounts;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -7,7 +7,9 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import io.pivotal.microservices.exceptions.AccountNotFoundException;
+import taller.pasarela.microservices.accounts.Account;
+import taller.pasarela.microservices.accounts.AccountsController;
+import taller.pasarela.microservices.exceptions.AccountNotFoundException;
 
 public abstract class AbstractAccountControllerTests {
 

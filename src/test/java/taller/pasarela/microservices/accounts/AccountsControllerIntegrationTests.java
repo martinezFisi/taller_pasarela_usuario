@@ -1,4 +1,4 @@
-package io.pivotal.microservices.accounts;
+package taller.pasarela.microservices.accounts;
 
 import org.junit.runner.RunWith;
 import org.springframework.boot.SpringApplication;
@@ -7,7 +7,8 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import io.pivotal.microservices.services.accounts.AccountsServer;
+import taller.pasarela.microservices.accounts.AccountsConfiguration;
+import taller.pasarela.microservices.services.accounts.AccountsServer;
 
 /**
  * Imitates the {@link AccountsServer}, but without using any of the discovery

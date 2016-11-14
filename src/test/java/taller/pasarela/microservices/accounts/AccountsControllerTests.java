@@ -1,9 +1,13 @@
-package io.pivotal.microservices.accounts;
+package taller.pasarela.microservices.accounts;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
+
+import taller.pasarela.microservices.accounts.Account;
+import taller.pasarela.microservices.accounts.AccountRepository;
+import taller.pasarela.microservices.accounts.AccountsController;
 
 public class AccountsControllerTests extends AbstractAccountControllerTests {
 

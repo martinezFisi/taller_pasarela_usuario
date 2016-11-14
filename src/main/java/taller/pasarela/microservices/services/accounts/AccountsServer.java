@@ -1,4 +1,4 @@
-package io.pivotal.microservices.services.accounts;
+package taller.pasarela.microservices.services.accounts;
 
 import java.util.logging.Logger;
 
@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Import;
 
-import io.pivotal.microservices.accounts.AccountRepository;
-import io.pivotal.microservices.accounts.AccountsConfiguration;
+import taller.pasarela.microservices.accounts.AccountRepository;
+import taller.pasarela.microservices.accounts.AccountsConfiguration;
 
 /**
  * Run as a micro-service, registering with the Discovery Server (Eureka).
@@ -17,7 +17,6 @@ import io.pivotal.microservices.accounts.AccountsConfiguration;
  * Note that the configuration for this application is imported from
  * {@link AccountsConfiguration}. This is a deliberate separation of concerns.
  * 
- * @author Heisenberg
  */
 @EnableAutoConfiguration
 @EnableDiscoveryClient
@@ -36,8 +35,7 @@ public class AccountsServer {
 	 *            Program arguments - ignored.
 	 */
 	public static void main(String[] args) {
-		// Tell server to look for accounts-server.properties or
-		// accounts-server.yml
+	
 		System.setProperty("spring.config.name", "accounts-server");
 
 		SpringApplication.run(AccountsServer.class, args);

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beansProjectDescription>
 	<version>1</version>
-	<pluginVersion><![CDATA[3.7.3.201602250914-RELEASE]]></pluginVersion>
+	<pluginVersion><![CDATA[3.8.2.201610040608-RELEASE]]></pluginVersion>
 	<configSuffixes>
 		<configSuffix><![CDATA[xml]]></configSuffix>
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
+		<config>java:taller.pasarela.microservices.services.accounts.AccountsServer</config>
+		<config>java:taller.pasarela.microservices.services.registration.RegistrationServer</config>
+		<config>java:taller.pasarela.microservices.services.web.WebServer</config>
+		<config>java:taller.pasarela.microservices.accounts.AccountsMain</config>
 	</configs>
 	<autoconfigs>
-		<config>java:io.pivotal.microservices.services.registration.RegistrationServer</config>
-		<config>java:io.pivotal.microservices.services.web.WebServer</config>
-		<config>java:io.pivotal.microservices.services.accounts.AccountsServer</config>
-		<config>java:io.pivotal.microservices.accounts.AccountsConfiguration</config>
 	</autoconfigs>
 	<configSets>
 		<configSet>
@@ -20,9 +20,9 @@
 			<allowBeanDefinitionOverriding>true</allowBeanDefinitionOverriding>
 			<incomplete>false</incomplete>
 			<configs>
-				<config>java:io.pivotal.microservices.services.registration.RegistrationServer</config>
-				<config>java:io.pivotal.microservices.services.web.WebServer</config>
-				<config>java:io.pivotal.microservices.services.accounts.AccountsServer</config>
+				<config>java:taller.pasarela.microservices.services.accounts.AccountsServer</config>
+				<config>java:taller.pasarela.microservices.services.registration.RegistrationServer</config>
+				<config>java:taller.pasarela.microservices.services.web.WebServer</config>
 			</configs>
 			<profiles>
 			</profiles>

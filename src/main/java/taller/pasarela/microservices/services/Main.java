@@ -1,14 +1,13 @@
-package io.pivotal.microservices.services;
+package taller.pasarela.microservices.services;
 
-import io.pivotal.microservices.services.accounts.AccountsServer;
-import io.pivotal.microservices.services.registration.RegistrationServer;
-import io.pivotal.microservices.services.web.WebServer;
+import taller.pasarela.microservices.services.accounts.AccountsServer;
+import taller.pasarela.microservices.services.registration.RegistrationServer;
+import taller.pasarela.microservices.services.web.WebServer;
 
 /**
  * Allow the servers to be invoked from the command-line. The jar is built with
  * this as the <code>Main-Class</code> in the jar's <code>MANIFEST.MF</code>.
  * 
- * @author Paul Chapman
  */
 public class Main {
 
@@ -18,10 +17,8 @@ public class Main {
 
 		switch (args.length) {
 		case 2:
-			// Optionally set the HTTP port to listen on, overrides
-			// value in the <server-name>-server.yml file
+			
 			System.setProperty("server.port", args[1]);
-			// Fall through into ..
 
 		case 1:
 			serverName = args[0].toLowerCase();

@@ -1,4 +1,4 @@
-package io.pivotal.microservices.services.web;
+package taller.pasarela.microservices.services.web;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,12 +12,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import io.pivotal.microservices.exceptions.AccountNotFoundException;
+import taller.pasarela.microservices.exceptions.AccountNotFoundException;
 
 /**
  * Hide the access to the microservice inside this local service.
  * 
- * @author Paul Chapman
  */
 @Service
 public class WebAccountsService {
@@ -43,8 +42,6 @@ public class WebAccountsService {
 	 */
 	@PostConstruct
 	public void demoOnly() {
-		// Can't do this in the constructor because the RestTemplate injection
-		// happens afterwards.
 		logger.warning("The RestTemplate request factory is "
 				+ restTemplate.getRequestFactory().getClass());
 	}

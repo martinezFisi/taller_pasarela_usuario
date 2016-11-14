@@ -1,4 +1,4 @@
-package io.pivotal.microservices.accounts;
+package taller.pasarela.microservices.accounts;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -8,12 +8,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.pivotal.microservices.exceptions.AccountNotFoundException;
+import taller.pasarela.microservices.exceptions.AccountNotFoundException;
 
 /**
  * A RESTFul controller for accessing account information.
  * 
- * @author Paul Chapman
  */
 @RestController
 public class AccountsController {
@@ -36,15 +35,7 @@ public class AccountsController {
 				+ accountRepository.countAccounts() + " accounts");
 	}
 
-	/**
-	 * Fetch an account with the specified account number.
-	 * 
-	 * @param accountNumber
-	 *            A numeric, 9 digit account number.
-	 * @return The account if found.
-	 * @throws AccountNotFoundException
-	 *             If the number is not recognised.
-	 */
+	
 	@RequestMapping("/accounts/{accountNumber}")
 	public Account byNumber(@PathVariable("accountNumber") String accountNumber) {
 
