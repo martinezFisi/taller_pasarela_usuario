@@ -74,7 +74,7 @@ public class WebAccountsController {
 		return "accountSearch";
 	}
 
-	@RequestMapping(value = "/accounts/dosearch")
+	@RequestMapping(value = "/accounts/payments")
 	public String doSearch(Model model, SearchCriteria criteria,
 			BindingResult result) {
 		logger.info("web-service search() invoked: " + criteria);
@@ -85,11 +85,6 @@ public class WebAccountsController {
 			return "accountSearch";
 
 		String accountNumber = criteria.getAccountNumber();
-		if (StringUtils.hasText(accountNumber)) {
-			return byNumber(model, accountNumber);
-		} else {
-			String searchText = criteria.getSearchText();
-			return ownerSearch(model, searchText);
-		}
+		return byNumber(model, accountNumber);
 	}
 }
