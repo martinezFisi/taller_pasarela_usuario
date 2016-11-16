@@ -5,6 +5,81 @@
 <head th:replace="header :: copy"></head>
 <head th:replace="header :: copy2"></head>
 
+<script src="js/jquery-2.1.1.min.js"></script>
+<style>
+	.selected{
+		cursor: pointer;
+	}
+	.selected:hover{
+		background-color: #7FB3D5;
+		color: white;
+	}
+	.seleccionada{
+		background-color: #1F618D;
+		color: white;
+	}
+</style>
+<script>
+	$(document).ready(function(){
+		$('#bt_add').click(function(){
+			agregar();
+		});
+		$('#bt_del').click(function(){
+			eliminar(id_fila_selected);
+		});
+		$('#bt_delall').click(function(){
+			eliminarTodasFilas();
+		});
+		
+
+	});
+	var cont=0;
+	var id_fila_selected=[];
+
+	function agregar(){
+		var lista = document.getElementById("opciones");
+		var indiceSeleccionado = lista.selectedIndex;
+		var opcionSeleccionada = lista.options[indiceSeleccionado]; 
+		var textoSeleccionado = opcionSeleccionada.text;
+		var valorSeleccionado = opcionSeleccionada.value;
+		cont++;
+	
+		var fila='<tr class="selected" id="fila'+cont+'" onclick="seleccionar(this.id);"><td>'+cont+'</td><td>'+valorSeleccionado+'</td><td>Llamar de la BD</td><td>Llamar de la BD</td></tr>';
+		
+		$('#tabla').append(fila);
+	
+		reordenar();
+	}
+
+	function seleccionar(id_fila){
+		if($('#'+id_fila).hasClass('seleccionada')){
+			$('#'+id_fila).removeClass('seleccionada');
+		}
+		else{
+			$('#'+id_fila).addClass('seleccionada');
+		}
+		//2702id_fila_selected=id_fila;
+		id_fila_selected.push(id_fila);
+	}
+	
+	function eliminar(id_fila){
+		/*$('#'+id_fila).remove();
+		reordenar();*/
+		for(var i = 0; i != id_fila.length; i++){
+			$('#'+id_fila[i]).remove();
+		}
+		reordenar();
+	}
+	
+	function reordenar(){
+		var num=1;
+		$('#tabla tbody tr').each(function(){
+			$(this).find('td').eq(0).text(num);
+			num++;
+		});
+	}
+</script>
+
 <body>
 	<div class="container">
 		<center><h1 style=" padding-top: 55px; padding-bottom: 40px;">Seleccionar detalle de pago</h1></center>
@@ -22,50 +97,37 @@
 					
 					
 				</dl>
-				<form class="form-horizontal" style= "padding: 30px 80px;">
-					<div class="form-group">
-				    	<label for="inputEmail3" class="col-sm-3 control-label">Seleccionar detalle de pago:</label>
-				    	<div class="col-sm-4">
-				      		<select class="form-control">
-							  	<option>Carnet Universitario</option>
-							  	<option>Laboratorio</option>
-							  	<option>Autoseguro</option>
-							  	<option>2da Repitancia</option>
-							  	<option>3ra Repitancia</option>
-							</select>
-				    	</div>
-				    	<div class="col-sm-4">
-				      		<button type="button" class="btn btn-primary btn-lg" style= "padding: 3.5px 10px;">Agregar concepto</button>
-				    	</div>
-				  	</div>
 				
-				  	<table class="table table-striped">
-			 			<tr>
-						  	<td class="active">Descripcion</td>
-						  	<td class="success">Concepto</td>
-						  	<td class="warning">Monto</td>
-						  	<td class="info">Editar</td>
-						</tr>
-						<tr>
-						  	<td class="active">Laboratorio</td>
-						  	<td class="success">210-340</td>
-						  	<td class="warning">s/.50</td>
-						  	<td class="info"><input class="btn btn-danger" type="submit" value="Eliminar" style= "padding: 3px 8px;"/></td>
-						</tr>	
-						<tr>
-						  	<td class="active">Carnet Univeritario</td>
-						  	<td class="success">210-340</td>
-						  	<td class="warning">S/. 25</td>
-						  	<td class="info"><input class="btn btn-danger" type="submit" value="Eliminar" style= "padding: 3px 8px;"/></td>
-						</tr>
-						<tr>
-						  	<td class="active">2da Repitencia</td>
-						  	<td class="success">210-340</td>
-						  	<td class="warning">S/. 30</td>
-						  	<td class="info"><input class="btn btn-danger" type="submit" value="Eliminar" style= "padding: 3px 8px;"/></td>
-						</tr>	  	
+				<div class="form-group">
+			    	<label for="inputEmail3" class="col-sm-3 control-label" style= "font-size: 0.8em; padding-top: 5px;">Seleccionar detalle de pago:</label>
+			    	<div class="col-sm-4">
+			      		<select id="opciones" name="opciones" class="form-control">
+						  	<option>Carnet Universitario</option>
+						  	<option>Laboratorio</option>
+						  	<option>Autoseguro</option>
+						  	<option>2da Repitancia</option>
+						  	<option>3ra Repitancia</option>
+						</select>
+			    	</div>
+			    	<div class="col-sm-4">
+			      		<a id="bt_add" class="btn btn-primary" style= "padding: 3.5px 10px;">Agregar</a>
+			      		<a id="bt_del" class="btn btn-danger" style= "padding: 3.5px 10px;">Eliminar</a>
+			    	</div>
+			    	<div class="clearfix"> </div>
+			  	</div>
+				<div style="min-height: 300px;">
+				  	<table id="tabla" class="table table-bordered">
+					  	<thead>
+							<tr>
+								<td class="info">N°</td>
+								<td class="active">Descripción</td>
+							  	<td class="success">Concepto</td>
+							  	<td class="warning">Monto</td>
+							</tr>
+						</thead>  	
 					</table>
-				</form>
+					<div class="clearfix"> </div>
+				</div>
 			</div>		
 		</div>
 	
