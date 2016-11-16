@@ -3,30 +3,79 @@
 	xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="header :: copy"></head>
+<head th:replace="header :: copy2"></head>
 
 <body>
-	<h1>Account Details</h1>
-
-	<dl class="dl-horizontal">
-		<dt>Number</dt>
-		<dd th:text="${account.number}">number</dd>
-		<dt>Owner</dt>
-		<dd th:text="${account.owner}">number</dd>
-		<dt>Email</dt>
-		<dd th:text="${account.email}">number</dd>
-		<dt>EAP</dt>
-		<dd th:text="${account.eap}">number</dd>
-		
-		
-	</dl>
-
-	<div style="height: 2cm">&nbsp;</div>
-
-	<div style="text-align: right">
-		Options: <a th:href="@{/}">Home</a> | <a
-			th:href="@{/accounts/search}">Account Search</a>
+	<div class="container">
+		<center><h1 style=" padding-top: 55px; padding-bottom: 40px;">Seleccionar detalle de pago</h1></center>
+	
+		<div class="col-md-12">
+			<div class="row">
+				<h3> Bienvenido <span th:text="${account.owner}">number></span></h3>
+				<dl class="dl-horizontal">
+					<dt>Código</dt>
+					<dd th:text="${account.number}">number</dd>
+					<dt>E-mail</dt>
+					<dd th:text="${account.email}">number</dd>
+					<dt>EAP</dt>
+					<dd th:text="${account.eap}">number</dd>
+					
+					
+				</dl>
+				<form class="form-horizontal" style= "padding: 30px 80px;">
+					<div class="form-group">
+				    	<label for="inputEmail3" class="col-sm-3 control-label">Seleccionar detalle de pago:</label>
+				    	<div class="col-sm-4">
+				      		<select class="form-control">
+							  	<option>Carnet Universitario</option>
+							  	<option>Laboratorio</option>
+							  	<option>Autoseguro</option>
+							  	<option>2da Repitancia</option>
+							  	<option>3ra Repitancia</option>
+							</select>
+				    	</div>
+				    	<div class="col-sm-4">
+				      		<button type="button" class="btn btn-primary btn-lg" style= "padding: 3.5px 10px;">Agregar concepto</button>
+				    	</div>
+				  	</div>
+				
+				  	<table class="table table-striped">
+			 			<tr>
+						  	<td class="active">Descripcion</td>
+						  	<td class="success">Concepto</td>
+						  	<td class="warning">Monto</td>
+						  	<td class="info">Editar</td>
+						</tr>
+						<tr>
+						  	<td class="active">Laboratorio</td>
+						  	<td class="success">210-340</td>
+						  	<td class="warning">s/.50</td>
+						  	<td class="info"><input class="btn btn-danger" type="submit" value="Eliminar" style= "padding: 3px 8px;"/></td>
+						</tr>	
+						<tr>
+						  	<td class="active">Carnet Univeritario</td>
+						  	<td class="success">210-340</td>
+						  	<td class="warning">S/. 25</td>
+						  	<td class="info"><input class="btn btn-danger" type="submit" value="Eliminar" style= "padding: 3px 8px;"/></td>
+						</tr>
+						<tr>
+						  	<td class="active">2da Repitencia</td>
+						  	<td class="success">210-340</td>
+						  	<td class="warning">S/. 30</td>
+						  	<td class="info"><input class="btn btn-danger" type="submit" value="Eliminar" style= "padding: 3px 8px;"/></td>
+						</tr>	  	
+					</table>
+				</form>
+			</div>		
+		</div>
+	
 	</div>
-
-	<div th:replace="footer :: copy"></div>
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+	<div th:replace="footer :: copy3"></div>
 </body>
 </html>

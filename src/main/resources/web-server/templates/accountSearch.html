@@ -3,63 +3,40 @@
 	xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="header :: copy"></head>
+<head th:replace="header :: copy2"></head>
 
 <body>
 
-	<form action="#" th:object="${searchCriteria}" method="GET"
-			th:action="@{/accounts/dosearch}" class="form-horizontal">
-	
-		<div class="form-group" style="padding-left: 300px;">
-			<div class="control-label col-xs-2">&nbsp;</div>
-			<div class="col-xs-2">&nbsp;</div>
-			<div class="col-xs-8">
-				<span th:if="${#fields.hasErrors('accountNumber')}"
-					style="color: red; font-size: smaller" th:errors="*{accountNumber}">Incorrect
-					data</span>
-			</div>
-		</div>
-		
-		<div class="parallax-container" style="padding-top: 150px;">
-			<div class="container bordered">
-				<div class="row card-panel #eeeeee grey lighten-3">
-				<!-- <form class="col s12"> -->
-					<!-- <div class="col-xs-2"> -->
-					<center><h4>Verificar codigo de alumno</h4></center>
-						<div class="row">
-							<div class="input-field col s6 offset-s3">
-								<input type="text" class="validate" id="number" th:field="*{accountNumber}"/>
-								<label for="first_name">Ingrese su codigo</label>
-							</div>
-						</div>
-					<!-- </div> -->
-					<!-- </form> -->
+	<div class="login-page">
+	    <div class="login-main">  	
+	    	 <div class="login-head">
+					<h1>Verificacion de Alumno</h1>
 				</div>
-			</div>
-		</div>
-		
+				<div class="login-block">
+					<form action="#" th:object="${searchCriteria}" method="GET" th:action="@{/accounts/dosearch}" class="form-horizontal">
+						<input type="text" class="validate" id="number" placeholder="Codigo" th:field="*{accountNumber}"/>
 						
-		<div class="container">
-			<div class="row">
-				<div class="col s3 offset-s3">
-					<button class="waves-effect waves-light btn-large #1a237e indigo darken-4" type="submit">Verificar</button>
+						<div class="forgot-top-grids">
+							<div class="forgot-grid">
+								<ul>
+									<li>
+										<input type="checkbox" id="brand1" value=""/>
+										<label for="brand1" style="color: #DC7633 !important;"><span></span>Recordar Código</label>
+									</li>
+								</ul>
+							</div>
+							
+							<div class="clearfix"> </div>
+						</div>
+						<input type="submit" value="Verificar"/>	
+						
+					</form>
+					<h5><a href="http://sistemas.unmsm.edu.pe/">Regresar</a></h5>
 				</div>
-				<div class="col s3 offset-s3">
-		 			<button class="waves-effect waves-light btn-large #1a237e indigo darken-4">Regresar</button>		
-		 		</div>
-			</div>
-		</div>
-	</form>
+	      </div>
+	</div>
 
-	<div th:replace="footer :: copy"></div>
-	<!--Import jQuery before materialize.js-->
-			<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-			<script type="text/javascript" src="/jquery-3.1.1.min.js"></script>
-			<script type="text/javascript" src="/materialize.min.js"></script>
-			<script>
-				$(document).ready(function(){
-      	$('.parallax').parallax();
-    		});
-			</script>
-
+	<div th:replace="footer :: copy3"></div>
+	
 </body>
 </html>

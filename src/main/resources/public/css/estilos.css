@@ -1,0 +1,46 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+footer{
+	background: #2E2D2D;
+	height: 200px;
+	color: white;
+}
+#container{
+	background: gray;
+}
+.col-md-2 {
+    background-color: #e3e3e3;
+}
+.container-vertical{
+	background: #e3e3e3;
+	height: 250px;
+	color: gray;
+}
+aside{
+	width: 25%;
+	height: 500px;
+	float: left;
+	background-color: #0B0B61;
+}
+article{
+	width: 75%;
+	height: 500px;
+	float: left;
+	background-color: #FAFAFA;
+}
+li a{
+	text-decoration: none;
+}
+form{
+	float: left;
+	padding: 20px;
+}
+section{
+	margin: 30px;
+	width: 400px;
+	height: 100px;
+	float: left;
+	background-color: lightblue;
+}
