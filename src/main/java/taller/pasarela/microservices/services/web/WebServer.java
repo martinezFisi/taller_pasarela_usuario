@@ -19,7 +19,7 @@ public class WebServer {
 	 * doesn't matter.
 	 */
 	public static final String ACCOUNTS_SERVICE_URL = "http://ACCOUNTS-SERVICE";
-
+	public static final String PAYMENTS_SERVICE_URL = "http://PAYMETS-SERVICE";
 	/**
 	 * Run the application using Spring Boot and an embedded servlet engine.
 	 * 
@@ -52,6 +52,12 @@ public class WebServer {
 	public WebAccountsService accountsService() {
 		return new WebAccountsService(ACCOUNTS_SERVICE_URL);
 	}
+	
+	@Bean
+	public WebpaymentsService paymentsService() {
+		return new WebpaymentsService(PAYMENTS_SERVICE_URL);
+	}
+	
 
 	/**
 	 * Create the controller, passing it the {@link WebAccountsService} to use.
@@ -61,6 +67,11 @@ public class WebServer {
 	@Bean
 	public WebAccountsController accountsController() {
 		return new WebAccountsController(accountsService());
+	}
+	
+	@Bean
+	public WebpaymentsController paymentsController() {
+		return new WebpaymentsController(paymentsService());
 	}
 
 	@Bean
