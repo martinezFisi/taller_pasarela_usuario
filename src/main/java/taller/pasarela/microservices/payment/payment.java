@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Table(name = "CONCEPTO")
 public class payment implements Serializable{
 	
+private static final long serialVersionUID = 1L;
 	
 public static Long nextId = 0L;
 
@@ -30,7 +31,19 @@ protected static Long getNextId() {
 		return nextId++;
 	}
 }
+public long getId_p() {
+	return id_p;
+}
 
+/**
+ * Set JPA id - for testing and JPA only. Not intended for normal use.
+ * 
+ * @param id
+ *            The new id.
+ */
+protected void setId_p(long id_p) {
+	this.id_p = id_p;
+}
 public payment(String concepto, String monto) {
 	id_p = getNextId();
 	this.concepto = concepto;
