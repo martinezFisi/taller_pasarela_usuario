@@ -19,7 +19,7 @@
 		color: white;
 	}
 </style>
-<script>
+<script th:inline="javascript">
 	$(document).ready(function(){
 		$('#bt_add').click(function(){
 			agregar();
@@ -31,8 +31,9 @@
 			eliminarTodasFilas();
 		});
 		
-
+		
 	});
+	
 	var cont=0;
 	var id_fila_selected=[];
 
@@ -42,9 +43,18 @@
 		var opcionSeleccionada = lista.options[indiceSeleccionado]; 
 		var textoSeleccionado = opcionSeleccionada.text;
 		var valorSeleccionado = opcionSeleccionada.value;
+		var payments = [[${paymentList}]];
+		
+		
+		var payment = $.grep(payments, function( n, i ) {
+			  return n.id_p == valorSeleccionado	;
+		});
+		
+		
 		cont++;
+		
 	
-		var fila='<tr class="selected" id="fila'+cont+'" onclick="seleccionar(this.id);"><td>'+cont+'</td><td>'+valorSeleccionado+'</td><td>Llamar de la BD</td><td>Llamar de la BD</td></tr>';
+		var fila='<tr class="selected" id="fila'+cont+'" onclick="seleccionar(this.id);"><td>'+cont+'</td><td>'+valorSeleccionado+'</td><td>'+textoSeleccionado+'</td><td>'+ payment[0].monto +'</td></tr>';
 		
 		$('#tabla').append(fila);
 	
@@ -101,12 +111,11 @@
 				<div class="form-group">
 			    	<label for="inputEmail3" class="col-sm-3 control-label" style= "font-size: 0.8em; padding-top: 5px;">Seleccionar detalle de pago:</label>
 			    	<div class="col-sm-4">
-			      		<select id="opciones" name="opciones" class="form-control">
-						  	<option>Carnet Universitario</option>
-						  	<option>Laboratorio</option>
-						  	<option>Autoseguro</option>
-						  	<option>2da Repitancia</option>
-						  	<option>3ra Repitancia</option>
+			      		<select id="opciones" name="opciones" class="form-control" th:field="*{payment}">
+						  	<option th:each="payment : ${paymentList}" 
+          							th:value="${payment.id_p}" 
+          							th:text="${payment.concepto}">
+          					</option>
 						</select>
 			    	</div>
 			    	<div class="col-sm-4">
