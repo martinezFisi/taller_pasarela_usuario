@@ -1,5 +1,6 @@
 package taller.pasarela.microservices.services.web;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -56,13 +57,15 @@ public class WebAccountsController {
 	@RequestMapping("/accounts/{accountNumber}")
 	public String byNumber(Model model,
 			@PathVariable("accountNumber") String accountNumber) {
-
+		
+		List<payment> payment = new ArrayList<>();
+	    model.addAttribute("payment", payment);
 		logger.info("web-service byNumber() invoked: " + accountNumber);
 		model.addAttribute("payment", new payment());
 		List <payment> payments = paymentsService.getpayments();
 		model.addAttribute("paymentList" , payments);
 		Account account = accountsService.findByNumber(accountNumber);
-		logger.info("web-service byNumber() found: " + account);
+		logger.info("web-service byNumber() fo	und: " + account);
 		model.addAttribute("account", account);
 		return "account";
 		
