@@ -10,9 +10,10 @@
 		<config>java:taller.pasarela.microservices.services.accounts.AccountsServer</config>
 		<config>java:taller.pasarela.microservices.services.registration.RegistrationServer</config>
 		<config>java:taller.pasarela.microservices.services.web.WebServer</config>
-		<config>java:taller.pasarela.microservices.accounts.AccountsMain</config>
+		<config>java:taller.pasarela.microservices.services.payment.paymentsServer</config>
 	</configs>
 	<autoconfigs>
+		<config>java:taller.pasarela.microservices.accounts.AccountsMain</config>
 	</autoconfigs>
 	<configSets>
 		<configSet>

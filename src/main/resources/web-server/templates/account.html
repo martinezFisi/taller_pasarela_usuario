@@ -5,6 +5,9 @@
 <head th:replace="header :: copy"></head>
 
 <body>
+
+
+	
 	<h1>Account Details</h1>
 
 	<dl class="dl-horizontal">
@@ -19,7 +22,19 @@
 		
 		
 	</dl>
+	
+		
+		<select th:field="*{payment}">
+  		<option th:each="payment : ${paymentList}" 
+          th:value="${payment.id_p}" 
+          th:text="${payment.concepto}"></option>
+		</select>
+		
 
+	
+
+    
+	
 	<div style="height: 2cm">&nbsp;</div>
 
 	<div style="text-align: right">
@@ -29,4 +44,11 @@
 
 	<div th:replace="footer :: copy"></div>
 </body>
+
+<script th:inline="javascript">
+	var account = [[${account}]];
+	console.log(account);
+	var payments = [[${paymentList}]];
+	console.log(payments);
+</script>
 </html>

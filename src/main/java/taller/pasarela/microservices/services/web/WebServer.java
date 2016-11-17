@@ -6,6 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.ui.Model;
 import org.springframework.web.client.RestTemplate;
 
 
@@ -13,13 +14,13 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 @ComponentScan(useDefaultFilters = false) 
 public class WebServer {
-
+	
 	/**
 	 * URL uses the logical name of account-service - upper or lower case,
 	 * doesn't matter.
 	 */
 	public static final String ACCOUNTS_SERVICE_URL = "http://ACCOUNTS-SERVICE";
-
+	public static final String PAYMENTS_SERVICE_URL = "http://PAYMENTS-SERVICE";
 	/**
 	 * Run the application using Spring Boot and an embedded servlet engine.
 	 * 
@@ -52,6 +53,12 @@ public class WebServer {
 	public WebAccountsService accountsService() {
 		return new WebAccountsService(ACCOUNTS_SERVICE_URL);
 	}
+	
+	@Bean
+	public WebpaymentsService paymentsService() {
+		return new WebpaymentsService(PAYMENTS_SERVICE_URL);
+	}
+	
 
 	/**
 	 * Create the controller, passing it the {@link WebAccountsService} to use.
@@ -61,6 +68,11 @@ public class WebServer {
 	@Bean
 	public WebAccountsController accountsController() {
 		return new WebAccountsController(accountsService());
+	}
+	
+	@Bean
+	public WebpaymentsController paymentsController() {
+		return new WebpaymentsController(paymentsService());
 	}
 
 	@Bean

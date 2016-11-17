@@ -1,4 +1,4 @@
-package taller.pasarela.microservices.accounts;
+package taller.pasarela.microservices.payment;
 
 import java.util.List;
 import java.util.Map;
@@ -15,17 +15,16 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
-
 @Configuration
 @ComponentScan
-@EntityScan("taller.pasarela.microservices.accounts")
-@EnableJpaRepositories("taller.pasarela.microservices.accounts")
+@EntityScan("taller.pasarela.microservices.payment")
+@EnableJpaRepositories("taller.pasarela.microservices.payment")
 @PropertySource("classpath:db-config.properties")
-public class AccountsConfiguration {
+public class paymentCOnfiguration {
 
 	protected Logger logger;
 
-	public AccountsConfiguration() {
+	public paymentCOnfiguration() {
 		logger = Logger.getLogger(getClass().getName());
 	}
 
@@ -40,8 +39,8 @@ public class AccountsConfiguration {
 		logger.info("dataSource = " + dataSource);
 
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		List<Map<String, Object>> accounts = jdbcTemplate.queryForList("SELECT code FROM USUARIO");
-		logger.info("System has " + accounts.size() + " accounts");
+		List<Map<String, Object>> payments = jdbcTemplate.queryForList("SELECT id_concepto FROM CONCEPTO");
+		logger.info("System has " + payments.size() + " payments");
 
 		
 
