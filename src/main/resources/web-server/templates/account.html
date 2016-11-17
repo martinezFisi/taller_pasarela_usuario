@@ -20,6 +20,18 @@
 		
 	</dl>
 
+<div class="form-group">
+ <label class="col-md-3 control-label">PELUCA MARICON</label>
+     <div class="col-md-5">
+         <select th:field="*{payment}">
+             <option th:each="dropDownItem : ${paymentList}"
+                             th:value="${dropDownItem.concepto}"
+                             th:text="${dropDownItem.concepto}" />
+         </select>
+</div>
+</div>			
+
+
 	<div style="height: 2cm">&nbsp;</div>
 
 	<div style="text-align: right">

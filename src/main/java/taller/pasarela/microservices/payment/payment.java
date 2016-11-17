@@ -54,11 +54,11 @@ protected payment() {
 }
 
 
-public String getconcepto() {
+public String getConcepto() {
 	return concepto;
 }
 
-public void setconcepto(String concepto) {
+public void setConcepto(String concepto) {
 	this.concepto = concepto;
 }
 

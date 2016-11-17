@@ -29,6 +29,23 @@ public class WebpaymentsService {
 				: "http://" + serviceUrl;
 	}
 	
+	public List<payment> getpayments() {
+		
+		payment[] payments = null;
+
+		try {
+			payments = restTemplate.getForObject(serviceUrl
+					+ "/payments/", payment[].class);
+		} catch (HttpClientErrorException e) { // 404
+			// Nothing found
+		}
+
+		if (payments == null || payments.length == 0)
+			return null;
+		else
+			return Arrays.asList(payments);
+	}
+	
 	@PostConstruct
 	public void demoOnly() {
 		logger.warning("The RestTemplate request factory is "

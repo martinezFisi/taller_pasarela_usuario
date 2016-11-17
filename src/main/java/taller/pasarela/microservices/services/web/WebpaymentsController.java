@@ -28,10 +28,6 @@ public class WebpaymentsController {
 		this.paymentsService = paymentsService;
 	}
 
-	@InitBinder
-	public void initBinder(WebDataBinder binder) {
-		binder.setAllowedFields("accountNumber", "searchText");
-	}
 	
 	@RequestMapping("/payments")
 	public String goHome() {

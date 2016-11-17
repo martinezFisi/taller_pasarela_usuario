@@ -2,7 +2,7 @@ package taller.pasarela.microservices.services.web;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
 
-@JsonRootName("Account")
+@JsonRootName("payment")
 public class payment {
 
 	protected Long id_p;

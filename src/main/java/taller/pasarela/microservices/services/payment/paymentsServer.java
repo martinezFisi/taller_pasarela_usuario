@@ -13,7 +13,7 @@ import taller.pasarela.microservices.payment.paymentCOnfiguration;
 @EnableDiscoveryClient
 @Import(paymentCOnfiguration.class)
 
-public class paymentServer {
+public class paymentsServer {
 	
 	@Autowired
 	protected paymentRepository paymentRepository;
@@ -21,9 +21,9 @@ public class paymentServer {
 	
 	public static void main(String[] args) {
 		
-		System.setProperty("spring.config.name", "payment-server");
+		System.setProperty("spring.config.name", "payments-server");
 
-		SpringApplication.run(paymentServer.class, args);
+		SpringApplication.run(paymentsServer.class, args);
 	}
 	
 }
