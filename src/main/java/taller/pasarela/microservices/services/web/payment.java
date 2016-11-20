@@ -8,7 +8,6 @@ public class payment {
 	protected Long id_p;
 	protected String concepto;	
 	protected String monto;
-	protected String descripcion;
 	
 	
 	public payment() {
@@ -30,12 +29,6 @@ public class payment {
 	}
 	public void setMonto(String monto) {
 		this.monto = monto;
-	}
-	public String getDescripcion() {
-		return descripcion;
-	}
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
 	}
 	
 	

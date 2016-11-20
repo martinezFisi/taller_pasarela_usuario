@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import taller.pasarela.microservices.services.web.Account;
 
 /**
  * Client controller, fetches Account info from the microservice via

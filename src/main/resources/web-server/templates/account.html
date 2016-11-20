@@ -18,52 +18,19 @@
 		background-color: #1F618D;
 		color: white;
 	}
-	#scroll1 {
-     overflow:scroll;
-     height:200px;
-     width:1000px;
-	}
-	#scroll1 table {
-    width:1000px;
-    background-color:#F2F2F2;
-	}
-	#bt_add {
-		padding: 30px;
-	    border-radius: 200px 200px 200px 200px;
-		-moz-border-radius: 200px 200px 200px 200px;
-		-webkit-border-radius: 200px 200px 200px 200px;
-		border: 0px solid #000000;
-		color: white;
-	}
-	#bt_del {
-		padding: 30px;
-	    border-radius: 200px 200px 200px 200px;
-		-moz-border-radius: 200px 200px 200px 200px;
-		-webkit-border-radius: 200px 200px 200px 200px;
-		border: 0px solid #000000;
-		color: white;
-	}
 </style>
 <script th:inline="javascript">
 	$(document).ready(function(){
 		$('#bt_add').click(function(){
 			agregar();
 		});
-		
+		$('#bt_del').click(function(){
+			eliminar(id_fila_selected);
+		});
 		$('#bt_delall').click(function(){
 			eliminarTodasFilas();
 		});
-		$('#bt_del').click(function(){
-      		alertify.confirm("Estas seguro de que quiere eliminar",function(e){
-        if (e) {
-        	eliminar(id_fila_selected);
-			
-        }else{
-
-        }
-      });
-    
-    });
+		
 		
 	});
 	
@@ -77,7 +44,6 @@
 		var textoSeleccionado = opcionSeleccionada.text;
 		var valorSeleccionado = opcionSeleccionada.value;
 		var payments = [[${paymentList}]];
-
 		
 		
 		var payment = $.grep(payments, function( n, i ) {
@@ -88,7 +54,7 @@
 		cont++;
 		
 	
-		var fila='<tr class="selected" id="fila'+cont+'" onclick="seleccionar(this.id);"><td>'+cont+'</td><td>'+payment[0].descripcion+'</td><td>'+textoSeleccionado+'</td><td>'+payment[0].monto+'</td></tr>';
+		var fila='<tr class="selected" id="fila'+cont+'" onclick="seleccionar(this.id);"><td>'+cont+'</td><td>'+valorSeleccionado+'</td><td>'+textoSeleccionado+'</td><td>'+ payment[0].monto +'</td></tr>';
 		
 		$('#tabla').append(fila);
 	
@@ -98,14 +64,12 @@
 	function seleccionar(id_fila){
 		if($('#'+id_fila).hasClass('seleccionada')){
 			$('#'+id_fila).removeClass('seleccionada');
-			id_fila_selected.pop(id_fila);
 		}
 		else{
 			$('#'+id_fila).addClass('seleccionada');
-			id_fila_selected.push(id_fila);
 		}
 		//2702id_fila_selected=id_fila;
-
+		id_fila_selected.push(id_fila);
 	}
 	
 	function eliminar(id_fila){
@@ -131,7 +95,7 @@
 		<center><h1 style=" padding-top: 55px; padding-bottom: 40px;">Seleccionar detalle de pago</h1></center>
 	
 		<div class="col-md-12">
-			<div class="container" style="width: 80%;">
+			<div class="row">
 				<h3> Bienvenido <span th:text="${account.owner}">number></span></h3>
 				<dl class="dl-horizontal">
 					<dt>Código</dt>
@@ -155,37 +119,28 @@
 						</select>
 			    	</div>
 			    	<div class="col-sm-4">
-			      		<a id="bt_add" class="btn btn-primary" style= "padding: 3.5px 10px;"><span class="glyphicon glyphicon-shopping-cart"></span> Agregar</a>
-			      		<a id="bt_del" class="btn btn-danger" style= "padding: 3.5px 10px;"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+			      		<a id="bt_add" class="btn btn-primary" style= "padding: 3.5px 10px;">Agregar</a>
+			      		<a id="bt_del" class="btn btn-danger" style= "padding: 3.5px 10px;">Eliminar</a>
 			    	</div>
 			    	<div class="clearfix"> </div>
 			  	</div>
 				<div style="min-height: 300px;">
-					<div id="scroll1">
-					  	<table id="tabla" class="table table-bordered">
-						  	<thead>
-								<tr>
-									<td class="info">N°</td>
-									<td class="active">Descripción</td>
-								  	<td class="success">Concepto</td>
-								  	<td class="warning">Monto</td>
-								</tr>
-							</thead>  	
-						</table>
-					</div>
-					<div class="form-group">
-					    <div class="col-sm-offset-4 col-md-8">
-					    <br/>
-					    <button type="button" class="btn btn-primary" th:action="@{/accountSearch}" style="float: right; padding: 20px; margin: 5px;"><span class="glyphicon glyphicon-send"></span> Salir</button>
-					    <button type="submit" class="btn btn-primary" style="float: right; padding: 20px; margin: 5px;" href="src/main/resources/web-server/templates/procesarPago.html"><span class="glyphicon glyphicon-repeat"></span> Procesar</button>
-					    </div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
+				  	<table id="tabla" class="table table-bordered">
+					  	<thead>
+							<tr>
+								<td class="info">N°</td>
+								<td class="active">Descripción</td>
+							  	<td class="success">Concepto</td>
+							  	<td class="warning">Monto</td>
+							</tr>
+						</thead>  	
+					</table>
+					<div class="clearfix"> </div>
 				</div>
 			</div>		
 		</div>
-
+	
+	</div>
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
