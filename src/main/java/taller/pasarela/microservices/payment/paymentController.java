@@ -12,7 +12,9 @@ import taller.pasarela.microservices.exceptions.AccountNotFoundException;
 import taller.pasarela.microservices.exceptions.paymentNotFoundException;
 import taller.pasarela.microservices.payment.paymentRepository;
 
-
+/**
+ * Un controlador RESTFul para acceder a la información de la CONCEPTO.
+ */
 @RestController
 public class paymentController {
 	
@@ -29,7 +31,10 @@ public class paymentController {
 			return payments;
 	}
 	
-	
+	/**
+	 *	Cree una instancia que conecte el repositorios que vamos a usar.
+	 * @param concepto Implementación de un repositorio de cuentas.        
+	 */
 	@RequestMapping("/payments/{concepto}")
 	public payment byConcepto(@PathVariable("concepto") String concepto) {
 

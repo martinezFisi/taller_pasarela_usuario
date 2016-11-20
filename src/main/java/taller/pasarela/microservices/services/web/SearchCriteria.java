@@ -3,6 +3,9 @@ package taller.pasarela.microservices.services.web;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
 
+/**
+ * Manipula la DATA con la cual se redirecciona a las otras vistas
+ * */
 public class SearchCriteria {
 	private String accountNumber;
 

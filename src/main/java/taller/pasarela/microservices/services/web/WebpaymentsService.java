@@ -13,6 +13,10 @@ import org.springframework.web.client.RestTemplate;
 
 import taller.pasarela.microservices.exceptions.AccountNotFoundException;
 
+/**
+ * Ocultar el acceso al microservicio dentro de este servicio local.
+ * 
+ */
 @Service
 public class WebpaymentsService {
 	@Autowired

@@ -7,7 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
+/**
+ * Esta clase define al modelo CONCEPTO de la base 
+ * de datos con la cual se esta trabanjo
+ * 
+ * */
 @Entity
 @Table(name = "CONCEPTO")
 public class payment implements Serializable{

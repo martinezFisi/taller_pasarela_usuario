@@ -5,9 +5,12 @@ import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 /**
- * Account DTO - used to interact with the {@link WebAccountsService}.
+ * Este es modelo Account para la tabla usuario, la cual se comunica 
+ * con la Webserver y los microservicios.
  * 
  */
+
+
 @JsonRootName("Account")
 public class Account {
 

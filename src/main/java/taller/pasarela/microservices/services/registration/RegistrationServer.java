@@ -5,7 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
- * All you need to run a Eureka registration server.
+ * Aqui se reune
+ * Todo lo que necesita para ejecutar un servidor de registro Eureka.
  * 
  */
 @SpringBootApplication
@@ -13,10 +14,10 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 public class RegistrationServer {
 
 	/**
-	 * Run the application using Spring Boot and an embedded servlet engine.
-	 * 
-	 * @param args
-	 *            Program arguments - ignored.
+	 * Este es el que ejecuta el motor de Spring Boot 
+	 * con el servlet incorporado
+	 * @param args Program arguments - ignored.
+	 *            
 	 */
 	public static void main(String[] args) {
 		System.setProperty("spring.config.name", "registration-server");

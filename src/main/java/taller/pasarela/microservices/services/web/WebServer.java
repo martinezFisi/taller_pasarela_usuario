@@ -16,16 +16,17 @@ import org.springframework.web.client.RestTemplate;
 public class WebServer {
 	
 	/**
-	 * URL uses the logical name of account-service - upper or lower case,
-	 * doesn't matter.
+	 * Dirección URL utiliza el nombre lógico de 
+	 * account-service: mayúsculas o minúsculas,
 	 */
 	public static final String ACCOUNTS_SERVICE_URL = "http://ACCOUNTS-SERVICE";
 	public static final String PAYMENTS_SERVICE_URL = "http://PAYMENTS-SERVICE";
 	/**
-	 * Run the application using Spring Boot and an embedded servlet engine.
+	 * 
+	 * Ejecute la aplicación mediante Spring Boot y un
+	 *  motor de servlet incorporado.
 	 * 
 	 * @param args
-	 *            Program arguments - ignored.
 	 */
 	public static void main(String[] args) {
 		System.setProperty("spring.config.name", "web-server");
@@ -33,10 +34,10 @@ public class WebServer {
 	}
 
 	/**
-	 * A customized RestTemplate that has the ribbon load balancer build in.
-	 * Note that prior to the 
 	 * 
-	 * @return
+	 * Un RestTemplate personalizado que tiene incorporado 
+	 * el equilibrador de carga de la cinta.
+	 * 
 	 */
 	@LoadBalanced
 	@Bean
@@ -45,9 +46,9 @@ public class WebServer {
 	}
 
 	/**
-	 * The AccountService encapsulates the interaction with the micro-service.
+	 * El AccountService encapsula la interacción con el micro-servicio.
 	 * 
-	 * @return A new service instance.
+	 * @return Una nueva instancia de servicio.
 	 */
 	@Bean
 	public WebAccountsService accountsService() {
@@ -61,7 +62,8 @@ public class WebServer {
 	
 
 	/**
-	 * Create the controller, passing it the {@link WebAccountsService} to use.
+	 * 
+	 * Cree el controlador, pasándole el  {@link WebAccountsService} para usar.
 	 * 
 	 * @return
 	 */
