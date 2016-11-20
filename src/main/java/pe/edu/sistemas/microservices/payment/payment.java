@@ -23,6 +23,9 @@ protected Long id_p;
 @Column(name = "id_concepto")
 protected String concepto;	
 
+@Column(name = "descripcion")
+protected String descripcion;
+
 @Column(name = "monto")
 protected String monto;
 
@@ -70,6 +73,12 @@ public void setMonto(String monto) {
 	this.monto = monto;
 }
 
+public String getDescripcion() {
+	return descripcion;
+}
 
+public void setDescripcion(String descripcion) {
+	this.descripcion = descripcion;
+}
 
 }
