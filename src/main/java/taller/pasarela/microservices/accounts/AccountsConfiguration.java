@@ -16,6 +16,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
 
+/**
+ * Clase que hace un llamado a la DATA de Scritps
+ * 
+ * */
 @Configuration
 @ComponentScan
 @EntityScan("taller.pasarela.microservices.accounts")
@@ -25,11 +29,15 @@ public class AccountsConfiguration {
 
 	protected Logger logger;
 
+	
 	public AccountsConfiguration() {
 		logger = Logger.getLogger(getClass().getName());
 	}
 
-	
+	/**
+	 * Con este metodo se comunica, con la Base de Datos, defino los atributos
+	 * los cuales voy a trabajar
+	 * */
 	@Bean
 	public DataSource dataSource() {
 		logger.info("dataSource() invoked");
@@ -44,7 +52,6 @@ public class AccountsConfiguration {
 		logger.info("System has " + accounts.size() + " accounts");
 
 		
-
 		return dataSource;
 	}
 }

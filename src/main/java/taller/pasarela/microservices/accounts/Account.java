@@ -8,6 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Esta clase define al modelo USUARIO de la base 
+ * de datos con la cual se esta trabanjo
+ * 
+ * */
 @Entity
 @Table(name = "USUARIO")
 public class Account implements Serializable {

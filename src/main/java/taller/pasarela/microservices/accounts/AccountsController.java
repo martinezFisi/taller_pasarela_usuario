@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import taller.pasarela.microservices.exceptions.AccountNotFoundException;
 
 /**
- * A RESTFul controller for accessing account information.
+ * 
+ * Un controlador RESTFul para acceder a la información de la USUARIO.
  * 
  */
 @RestController
@@ -22,10 +23,10 @@ public class AccountsController {
 	protected AccountRepository accountRepository;
 
 	/**
-	 * Create an instance plugging in the respository of Accounts.
 	 * 
-	 * @param accountRepository
-	 *            An account repository implementation.
+	 *	Cree una instancia que conecte el repositorios que vamos a usar.
+	 * @param accountRepository Implementación de un repositorio de cuentas.
+	 *            
 	 */
 	@Autowired
 	public AccountsController(AccountRepository accountRepository) {
@@ -35,7 +36,10 @@ public class AccountsController {
 				+ accountRepository.countAccounts() + " accounts");
 	}
 
-	
+	/**
+	 * Este metodo extrae la data del usuario dependiendo del codigo
+	 * @accountNumber: hace referencia a la codigo del alumno
+	 * */
 	@RequestMapping("/accounts/{accountNumber}")
 	public Account byNumber(@PathVariable("accountNumber") String accountNumber) {
 
@@ -50,6 +54,12 @@ public class AccountsController {
 		}
 	}
 
+	/**
+	 * Este metodo extrae la data del la base de datos y lo coloca en el URL 
+	 * la cual se pasa en el @RequestMapping
+	 * @RequestMapping: se coloca la pagina que se va usar.
+	 * @accountNumber: hace referencia al parametro que se desea para extraer data.
+	 * */
 	
 	@RequestMapping("/accounts/owner/{name}")
 	public List<Account> byOwner(@PathVariable("name") String partialName) {
