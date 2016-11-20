@@ -44,7 +44,7 @@
 		background-image:         linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));
 	}
 	.alertify-button:focus {
-		box-shadow: 0 0 15px #2B72D5;
+		box-shadow: 0 0 15px #DD8E1E;
 	}
 	.alertify-button:active {
 		position: relative;
@@ -53,14 +53,14 @@
 		.alertify-button-cancel,
 		.alertify-button-cancel:hover,
 		.alertify-button-cancel:focus {
-			background-color: #FE1A00;
-			border: 1px solid #D83526;
+			background-color: #DD8E1E;
+			border: 1px solid #DD8E1E;
 		}
 		.alertify-button-ok,
 		.alertify-button-ok:hover,
 		.alertify-button-ok:focus {
-			background-color: #5CB811;
-			border: 1px solid #3B7808;
+			background-color: #DD8E1E;
+			border: 1px solid #DD8E1E;
 		}
 
 .alertify-log {

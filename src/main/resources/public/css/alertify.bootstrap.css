@@ -8,7 +8,7 @@
 }
 .alertify {
 	background: #FFF;
-	border: 1px solid #8E8E8E; /* browsers that don't support rgba */
+	border: 1px solid #DD8E1E; /* browsers that don't support rgba */
 	border: 1px solid rgba(0,0,0,.3);
 	border-radius: 6px;
 	box-shadow: 0 3px 7px rgba(0,0,0,.3);
@@ -45,7 +45,7 @@
 
 		.alertify-buttons {
 			padding: 14px 15px 15px;
-			background: #F5F5F5;
+			background: #DD8E1E;
 			border-top: 1px solid #DDD;
 			border-radius: 0 0 6px 6px;
 			box-shadow: inset 0 1px 0 #FFF;
@@ -69,7 +69,7 @@
 			}
 			.alertify-button:focus {
 				outline: none;
-				box-shadow: 0 0 5px #2B72D5;
+				box-shadow: 0 0 5px #DD8E1E;
 			}
 			.alertify-button:active {
 				position: relative;
@@ -80,9 +80,9 @@
 				.alertify-button-cancel:focus,
 				.alertify-button-cancel:active {
 					text-shadow: 0 -1px 0 rgba(255,255,255,.75);
-					background-color: #E6E6E6;
+					background-color: #DD8E1E;
 					border: 1px solid #BBB;
-					color: #333;
+					color: #DD8E1E;
 					background-image: -webkit-linear-gradient(top, #FFF, #E6E6E6);
 					background-image:    -moz-linear-gradient(top, #FFF, #E6E6E6);
 					background-image:     -ms-linear-gradient(top, #FFF, #E6E6E6);
@@ -92,23 +92,23 @@
 				.alertify-button-cancel:hover,
 				.alertify-button-cancel:focus,
 				.alertify-button-cancel:active {
-					background: #E6E6E6;
+					background: #DD8E1E;
 				}
 				.alertify-button-ok,
 				.alertify-button-ok:hover,
 				.alertify-button-ok:focus,
 				.alertify-button-ok:active {
 					text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-					background-color: #04C;
-					border: 1px solid #04C;
-					border-color: #04C #04C #002A80;
+					background-color: #DD8E1E;
+					border: 1px solid #DD8E1E;
+					border-color: #04C #04C #DD8E1E;
 					border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 					color: #FFF;
 				}
 				.alertify-button-ok:hover,
 				.alertify-button-ok:focus,
 				.alertify-button-ok:active {
-					background: #04C;
+					background: #DD8E1E;
 				}
 
 .alertify-log {
