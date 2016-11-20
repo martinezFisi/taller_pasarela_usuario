@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 /**
  * Esta clase define al modelo USUARIO de la base 
- * de datos con la cual se esta trabanjo
+ * de datos con la cual se esta trabajando
  * 
  * */
 @Entity
