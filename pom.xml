@@ -14,7 +14,7 @@
 
 	<properties>
 		<!-- Stand-alone RESTFul application for testing only -->
-		<start-class>taller.pasarela.microservices.services.Main</start-class>
+		<start-class>pe.edu.sistemas.microservices.services.Main</start-class>
 	</properties>
 
 	<dependencies>

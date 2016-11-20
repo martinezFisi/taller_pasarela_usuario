@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.junit.Before;
 
-import taller.pasarela.microservices.accounts.Account;
-import taller.pasarela.microservices.accounts.AccountRepository;
-import taller.pasarela.microservices.accounts.AccountsController;
+import pe.edu.sistemas.microservices.accounts.Account;
+import pe.edu.sistemas.microservices.accounts.AccountRepository;
+import pe.edu.sistemas.microservices.accounts.AccountsController;
 
 public class AccountsControllerTests extends AbstractAccountControllerTests {
 

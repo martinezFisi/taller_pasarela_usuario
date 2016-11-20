@@ -7,9 +7,9 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import taller.pasarela.microservices.accounts.Account;
-import taller.pasarela.microservices.accounts.AccountsController;
-import taller.pasarela.microservices.exceptions.AccountNotFoundException;
+import pe.edu.sistemas.microservices.accounts.Account;
+import pe.edu.sistemas.microservices.accounts.AccountsController;
+import pe.edu.sistemas.microservices.exceptions.AccountNotFoundException;
 
 public abstract class AbstractAccountControllerTests {
 

@@ -41,6 +41,6 @@ dependencies {
 }
 
 springBoot {
-    mainClass = "taller.pasarela.microservices.services.Main"
+    mainClass = "pe.edu.sistemas.microservices.services.Main"
 }
 
