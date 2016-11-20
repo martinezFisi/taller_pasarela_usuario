@@ -2,15 +2,21 @@ package taller.pasarela.microservices.services.web;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
 
+
+/**
+ * Aqui se define el modelo del payment,
+ * la cual se comunica con la webservice, micro-service
+ * */
 @JsonRootName("payment")
 public class payment {
-
+	
 	protected Long id_p;
 	protected String concepto;	
 	protected String monto;
 	
 	
 	public payment() {
+		
 	}
 	public Long getId_p() {
 		return id_p;

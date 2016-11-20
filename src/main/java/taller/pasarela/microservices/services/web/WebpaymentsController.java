@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import taller.pasarela.microservices.services.web.payment;
 
+/*
+* Client controller, recupera la información de la cuenta desde el microservicio
+*
+*/
 @Controller
 public class WebpaymentsController {
 	

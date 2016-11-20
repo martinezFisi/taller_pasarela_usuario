@@ -12,9 +12,9 @@ import taller.pasarela.microservices.accounts.AccountRepository;
 import taller.pasarela.microservices.accounts.AccountsConfiguration;
 
 /**
- * Run as a micro-service, registering with the Discovery Server (Eureka).
- * <p>
- * Note that the configuration for this application is imported from
+ * Ejecutar  un micro-servicio, registrándose con el Discovery Server (Eureka).
+ * 
+ *Tenga en cuenta que la configuración de esta aplicación se importa desde
  * {@link AccountsConfiguration}. This is a deliberate separation of concerns.
  * 
  */

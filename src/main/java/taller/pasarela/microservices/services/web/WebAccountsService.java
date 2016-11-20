@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 import taller.pasarela.microservices.exceptions.AccountNotFoundException;
 
 /**
- * Hide the access to the microservice inside this local service.
+ * Ocultar el acceso al microservicio dentro de este servicio local.
  * 
  */
 @Service
@@ -36,9 +36,12 @@ public class WebAccountsService {
 	}
 
 	/**
-	 * The RestTemplate works because it uses a custom request-factory that uses
-	 * Ribbon to look-up the service to use. This method simply exists to show
-	 * this.
+	 * 
+	 * El RestTemplate funciona porque utiliza una fábrica 
+	 * de solicitud personalizada que utiliza
+	 * Ribbon to look-up para buscar el servicio a utilizar.
+	 * Este método simplemente existe para mostrar
+	 * 
 	 */
 	@PostConstruct
 	public void demoOnly() {

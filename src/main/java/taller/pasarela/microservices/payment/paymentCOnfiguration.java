@@ -15,6 +15,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
+
+/**
+ * Clase que hace un llamado a la DATA de Scritps
+ * segun el query que se coloca al hacer el llamado
+ * */
 @Configuration
 @ComponentScan
 @EntityScan("taller.pasarela.microservices.payment")

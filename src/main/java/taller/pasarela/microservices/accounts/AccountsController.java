@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import taller.pasarela.microservices.exceptions.AccountNotFoundException;
 
 /**
- * 
  * Un controlador RESTFul para acceder a la información de la USUARIO.
- * 
  */
 @RestController
 public class AccountsController {
@@ -23,10 +21,8 @@ public class AccountsController {
 	protected AccountRepository accountRepository;
 
 	/**
-	 * 
 	 *	Cree una instancia que conecte el repositorios que vamos a usar.
-	 * @param accountRepository Implementación de un repositorio de cuentas.
-	 *            
+	 * @param accountRepository Implementación de un repositorio de cuentas.        
 	 */
 	@Autowired
 	public AccountsController(AccountRepository accountRepository) {

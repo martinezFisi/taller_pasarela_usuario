@@ -12,7 +12,10 @@ import taller.pasarela.microservices.payment.paymentCOnfiguration;
 @EnableAutoConfiguration
 @EnableDiscoveryClient
 @Import(paymentCOnfiguration.class)
-
+/** 
+ * Este es el servidor de los payments los cuales 
+ * reunen a todos los micro-servicios
+ * */
 public class paymentsServer {
 	
 	@Autowired
