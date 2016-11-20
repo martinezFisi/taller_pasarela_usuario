@@ -2,7 +2,7 @@
 
 Proyecto del curso de taller de software.
 
------Pasarela de Pagos implementado con API VISA-----
+----Pasarela de Pagos implementado con API VISA----
 
 Requisitos:
 - Maven.
