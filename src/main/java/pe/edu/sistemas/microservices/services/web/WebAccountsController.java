@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 
 /**
@@ -96,17 +99,22 @@ public class WebAccountsController {
 			model.addAttribute("accounts", accounts);
 		return "accounts";
 	}
-  	
- 
-
-
-  	
-  	
+  	  	
 	@RequestMapping(value = "/accounts/search", method = RequestMethod.GET)
 	public String searchForm(Model model) {
 		model.addAttribute("searchCriteria", new SearchCriteria());
 		return "accountSearch";
 	}
+	
+  	//Agregado
+	
+	
+	//@RequestMapping(value = "/redirect", method = RequestMethod.GET)
+    //public void method(HttpServletResponse httpServletResponse) {
+    //    httpServletResponse.setHeader("Location",  myapp/some/resource);
+    //}
+	
+	//Agregado
 
 	@RequestMapping(value = "/accounts/payments")
 	public String doSearch(Model model, SearchCriteria criteria,

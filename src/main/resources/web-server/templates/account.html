@@ -171,10 +171,22 @@
 					<div class="form-group">
 					    <div class="col-sm-offset-4 col-md-8">
 					    <br/>
-					    <button type="button" class="btn btn-primary" th:action="@{/accountSearch}" style="float: right; padding: 20px; margin: 5px;"><span class="glyphicon glyphicon-send"></span> Salir</button>
-					    <button type="submit" class="btn btn-primary" style="float: right; padding: 20px; margin: 5px;" href="src/main/resources/web-server/templates/procesarPago.html"><span class="glyphicon glyphicon-repeat"></span> Procesar</button>
+					    <a th:href="@{/accounts/search}" type="button" class="btn btn-primary" style="float: right; padding: 20px; margin: 5px;"><span class="glyphicon glyphicon-send"></span> Salir</a>
+					    <a th:href="@{/templates/freemarker/index}" type="submit" class="btn btn-primary" style="float: right; padding: 20px; margin: 5px;" href="src/main/resources/web-server/templates/procesarPago.html"><span class="glyphicon glyphicon-repeat"></span> Procesar</a>
 					    </div>
 					</div>
+					<form action="/charge" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="${publishable_key}"
+        data-image="/img/marketplace.png"
+        data-name="Stripe.com"
+        data-description="Example charge"
+        data-amount="${amount}"
+        data-currency="${currency}"
+        data-locale="auto">
+      </script>
+    </form>
 				</div>
 				<div class="clearfix"> </div>
 				</div>
