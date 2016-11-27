@@ -19,7 +19,7 @@
 		color: white;
 	}
 	#scroll1 {
-     overflow-y:scroll !important;
+     overflow-y:auto !important;
      overflow-x:hidden !important;
      height:200px;
 	}
@@ -49,25 +49,13 @@
 		$('#bt_add').click(function(){
 			agregar();
 		});
-		
-		$('#bt_delall').click(function(){
-			eliminarTodasFilas();
-		});
-		$('#bt_del').click(function(){
-      		alertify.confirm("Estas seguro de que quiere eliminar",function(e){
-        if (e) {
-        	eliminar(id_fila_selected);
-			
-        }else{
-        }
-      });
-    
-    });
-		
 	});
 	
 	var cont=0;
-	var id_fila_selected=[];
+	var mayor=0;
+	var seleccionado=false;
+	var fila_anterior='';
+	
 	function agregar(){
 		var lista = document.getElementById("opciones");
 		var indiceSeleccionado = lista.selectedIndex;
@@ -83,42 +71,43 @@
 		
 		
 		cont++;
+		mayor = cont;
 		
 	
-		var fila='<tr class="selected" id="fila'+cont+'" onclick="seleccionar(this.id);"><td>'+cont+'</td><td>'+payment[0].descripcion+'</td><td>'+textoSeleccionado+'</td><td>'+payment[0].monto+'</td></tr>';
+		var fila='<tr class="selected" id="fila'+cont+'" onclick="seleccionar(this.id);"><td>'+payment[0].descripcion+'</td><td>'+textoSeleccionado+'</td><td>'+payment[0].monto+'</td><td><a class="btn btn-danger" style= "padding: 3.5px 10px; border-radius: 200px !important;" onclick="eliminar(this.parentNode.parentNode.rowIndex);"><span class="glyphicon glyphicon-trash"></span>Eliminar</a></td></tr>';
 		
 		$('#tabla').append(fila);
-	
-		reordenar();
+
 	}
 	function seleccionar(id_fila){
-		if($('#'+id_fila).hasClass('seleccionada')){
-			$('#'+id_fila).removeClass('seleccionada');
-			id_fila_selected.pop(id_fila);
-		}
-		else{
+		//verificar que no haya otro selecionado y quitar la seleccion
+		if(seleccionado == true){
+			$('#'+fila_anterior).removeClass('seleccionada');
 			$('#'+id_fila).addClass('seleccionada');
-			id_fila_selected.push(id_fila);
+			fila_anterior=id_fila;
+		}else{
+			$('#'+id_fila).addClass('seleccionada');
+			seleccionado=true;
+			fila_anterior=id_fila;
 		}
-		//2702id_fila_selected=id_fila;
+
 	}
-	
-	function eliminar(id_fila){
-		/*$('#'+id_fila).remove();
-		reordenar();*/
-		for(var i = 0; i != id_fila.length; i++){
-			$('#'+id_fila[i]).remove();
-		}
-		reordenar();
-	}
-	
-	function reordenar(){
-		var num=1;
-		$('#tabla tbody tr').each(function(){
-			$(this).find('td').eq(0).text(num);
-			num++;
+
+	function eliminar(i){
+		//Se obtiene la tabla con el id "tabla",
+		//luego se obtiene la fila que se va a eliminar por el numero de orden con respecto a la tabla,
+		//finalmente se obtiene la columna para abstraer su numero.
+		var t = document.getElementById("tabla"),
+			r = t.getElementsByTagName("tr")[i],
+			d = r.getElementsByTagName("td")[2]; 
+
+		alertify.confirm("Estas seguro de que quiere eliminar",function(e){
+			if (e) {
+				t.deleteRow(i);
+			}
 		});
 	}
+	
 </script>
 
 <body>
@@ -151,7 +140,6 @@
 			    	</div>
 			    	<div class="col-sm-4">
 			      		<a id="bt_add" class="btn btn-primary" style= "padding: 3.5px 10px;"><span class="glyphicon glyphicon-shopping-cart"></span> Agregar</a>
-			      		<a id="bt_del" class="btn btn-danger" style= "padding: 3.5px 10px;"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
 			    	</div>
 			    	<div class="clearfix"> </div>
 			  	</div>
@@ -160,10 +148,10 @@
 					  	<table id="tabla" class="table table-bordered" style="width: 100%;">
 						  	<thead>
 								<tr>
-									<td class="info">N°</td>
 									<td class="active">Descripción</td>
 								  	<td class="success">Concepto</td>
-								  	<td class="warning">Monto</td>
+								  	<td class="warning">Monto (S/.)</td>
+								  	<td class="warning">Editar</td>
 								</tr>
 							</thead>  	
 						</table>
