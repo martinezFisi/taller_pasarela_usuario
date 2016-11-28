@@ -120,4 +120,9 @@ public class WebAccountsController {
 		String accountNumber = criteria.getAccountNumber();
 		return byNumber(model, accountNumber);
 	}
+	
+	@RequestMapping("/accounts/pagos")
+	public String goHome2() {
+		return "pasarela";
+	}
 }

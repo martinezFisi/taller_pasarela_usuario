@@ -11,11 +11,11 @@
 		cursor: pointer;
 	}
 	.selected:hover{
-		background-color: #DD8E1E;
+		background-color: #edbe7b;
 		color: white;
 	}
 	.seleccionada{
-		background-color: #DD8E1E;
+		background-color: #eab177;
 		color: white;
 	}
 	#scroll1 {
@@ -159,8 +159,8 @@
 					<div class="form-group">
 					    <div class="col-sm-offset-4 col-md-8">
 					    <br/>
-					    <button type="button" class="btn btn-primary" th:action="@{/accountSearch}" style="float: right; padding: 20px; margin: 5px;"><span class="glyphicon glyphicon-send"></span> Salir</button>
-					    <button type="submit" class="btn btn-primary" style="float: right; padding: 20px; margin: 5px;" href="src/main/resources/web-server/templates/procesarPago.html"><span class="glyphicon glyphicon-repeat"></span> Procesar</button>
+					    <a th:href="@{/accounts/search}" class="btn btn-primary" style="float: right; padding: 20px; margin: 5px;"><span class="glyphicon glyphicon-send"></span> Salir</a>
+					    <a th:href="@{/accounts/owner/Keri}" type="submit" class="btn btn-primary" style="float: right; padding: 20px; margin: 5px;"><span class="glyphicon glyphicon-repeat"></span> Procesar</a>
 					    </div>
 					</div>
 				</div>
