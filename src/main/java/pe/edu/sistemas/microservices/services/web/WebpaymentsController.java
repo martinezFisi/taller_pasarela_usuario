@@ -38,5 +38,4 @@ public class WebpaymentsController {
 		return "index";
 	}
 
-	
 }

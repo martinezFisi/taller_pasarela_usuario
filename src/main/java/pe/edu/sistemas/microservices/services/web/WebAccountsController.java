@@ -122,7 +122,7 @@ public class WebAccountsController {
 	}
 	
 	@RequestMapping("/accounts/pagos")
-	public String goHome2() {
+	public String pasarela() {
 		return "pasarela";
 	}
 }

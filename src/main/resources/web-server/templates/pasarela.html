@@ -1,17 +1,18 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Titulo</title>
+
+<head th:replace="header :: copy2"></head>
+
 <link href="css/stylePasarela.css" rel="stylesheet" type="text/css" media="all"/>
 
 <!-- Custom Theme files -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 </head>
 <body>
-<div class="check">
+<div class="check" style="width: 40%;">
     <div class="check-head">
        <h2>Metodo de Pago: <span class="header-text">Tarjeta de credito</span></h2>
 	   <small class="strip" style="width: 100%;"> </small>
@@ -19,9 +20,9 @@
 	<div class="check-bottom">
 	     <form>
 		    <p>Nombre de Propietario</p>
-		    <input type="text" placeholder="Nombre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+		    <input type="text" placeholder="Nombre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/>
 			<p>Número de Tarjeta</p>
-			<input type="text" placeholder="Numero" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+			<input type="text" placeholder="Numero" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/>
 			<p>Fecha de Expiración</p>
 			<div class="expir-picker1">
 						<ul>						
@@ -63,17 +64,19 @@
 			<div class="cvv-numb">
 			  <div class="cvv-text">
 			    <p>Numero CVV</p>
-			    <input type="text" class="c-num" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+			    <input type="text" class="c-num" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/>
 			  </div>
 			  <div class="cvv-para">
 			    <p>Por favor, compruebe este campo</p>
 			  </div>
 			   <div class="clear"> </div> 
 			</div>
-			<input type="submit" value="Confirmar Pago">
+			<input type="submit" value="Confirmar Pago"/>
 		 </form>
 	</div>
 </div>
+
+<div th:replace="footer :: copy3"></div>
 
 </body>
 </html>
