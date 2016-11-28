@@ -55,6 +55,7 @@
 	var mayor=0;
 	var seleccionado=false;
 	var fila_anterior='';
+	var total=0;
 	
 	function agregar(){
 		var lista = document.getElementById("opciones");
@@ -76,7 +77,9 @@
 	
 		var fila='<tr class="selected" id="fila'+cont+'" onclick="seleccionar(this.id);"><td>'+payment[0].descripcion+'</td><td>'+textoSeleccionado+'</td><td>'+payment[0].monto+'</td><td><a class="btn btn-danger" style= "padding: 3.5px 10px; border-radius: 200px !important;" onclick="eliminar(this.parentNode.parentNode.rowIndex);"><span class="glyphicon glyphicon-trash"></span>Eliminar</a></td></tr>';
 		
-		$('#tabla').append(fila);
+		$('#tabla').prepend(fila);
+		
+		sumarMonto();
 
 	}
 	function seleccionar(id_fila){
@@ -104,8 +107,29 @@
 		alertify.confirm("Estas seguro de que quiere eliminar",function(e){
 			if (e) {
 				t.deleteRow(i);
+				
+				total=total-parseInt(d.innerHTML);
+				recargar();
 			}
 		});
+	}
+	
+	function sumarMonto(){
+		var t = document.getElementById("tabla"),
+			r = t.getElementsByTagName("tr")[1],
+			d = r.getElementsByTagName("td")[2];
+		
+		total=total+parseInt(d.innerHTML);
+		
+		recargar();
+	}
+	
+	function recargar(){
+		var reload= `<h3>Monto Total: </h3>
+					 <input type="number" class="form-control" value="${total}" disabled="" style="width: 100px;"/>
+					 <div class="clearfix"></div>`;
+
+		document.getElementById('monto').innerHTML = reload;
 	}
 	
 </script>
@@ -157,11 +181,18 @@
 						</table>
 					</div>
 					<div class="form-group">
-					    <div class="col-sm-offset-4 col-md-8">
-					    <br/>
-					    <a th:href="@{/accounts/search}" class="btn btn-primary" style="float: right; padding: 20px; margin: 5px;"><span class="glyphicon glyphicon-send"></span> Salir</a>
-					    <a th:href="@{/accounts/pagos}" type="submit" class="btn btn-primary" style="float: right; padding: 20px; margin: 5px;"><span class="glyphicon glyphicon-repeat"></span> Procesar</a>
+					
+						<div id="monto" class="col-md-4" style="padding: 20px;">
+					   		<h3>Monto Total: </h3>
+					   		<input type="number" class="form-control" value="" placeholder="S/." disabled="" style="width: 100px;"/>
+					   		<div class="clearfix"></div>
 					    </div>
+					    <div class="col-md-8">
+					    	<a th:href="@{/accounts/search}" class="btn btn-primary" style="float: right; padding: 20px; margin: 5px;"><span class="glyphicon glyphicon-send"></span> Salir</a>
+					    	<a th:href="@{/accounts/pagos}" type="submit" class="btn btn-primary" style="float: right; padding: 20px; margin: 5px;"><span class="glyphicon glyphicon-repeat"></span> Procesar</a>
+					    	<div class="clearfix"></div>
+					    </div>
+					    <div class="clearfix"></div>
 					</div>
 				</div>
 				<div class="clearfix"> </div>

@@ -97,10 +97,6 @@ public class WebAccountsController {
 		return "accounts";
 	}
   	
- 
-
-
-  	
   	
 	@RequestMapping(value = "/accounts/search", method = RequestMethod.GET)
 	public String searchForm(Model model) {
