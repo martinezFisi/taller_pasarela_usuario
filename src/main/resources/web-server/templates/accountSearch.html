@@ -14,14 +14,21 @@
 				</div>
 				<div class="login-block">
 					<form action="#" th:object="${searchCriteria}" method="GET" th:action="@{/accounts/payments}" class="form-horizontal">
-						<input type="text" class="validate" id="number" placeholder="Codigo" th:field="*{accountNumber}"/>
+						<input type="text" class="validate" id="number" placeholder="Codigo" required="" th:field="*{accountNumber}"/>
+						
+						<!-- Account Number errors (if any) -->
+						<div class="form-group" style="text-align:center;">
+							<div class="col-xs-12">
+								<span th:if="${#fields.hasErrors('accountNumber')}"
+									style="color: #FF5B5B; font-size: smaller; font-weight: bold" th:errors="*{accountNumber}"></span>
+							</div>
+						</div>
 						
 						<div class="forgot-top-grids">
 							<div class="forgot-grid">
 								<ul>
 									<li>
 										<input type="checkbox" id="brand1" value=""/>
-										<label for="brand1" style="color: #DC7633 !important;"><span></span>Recordar Código</label>
 									</li>
 								</ul>
 							</div>
@@ -29,7 +36,6 @@
 							<div class="clearfix"> </div>
 						</div>
 						<input type="submit" value="Verificar"/>	
-						
 					</form>
 					<h5><a href="http://sistemas.unmsm.edu.pe/">Regresar</a></h5>
 				</div>

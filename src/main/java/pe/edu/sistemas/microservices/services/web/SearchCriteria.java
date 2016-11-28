@@ -38,25 +38,25 @@ public class SearchCriteria {
 		if (StringUtils.hasText(accountNumber)) {
 			if (accountNumber.length() != 8)
 				errors.rejectValue("accountNumber", "badFormat",
-						"Account number should be 8 digits");
+						"El codigo de usuario debe ser un numero de 8 digitos");
 			else {
 				try {
 					Integer.parseInt(accountNumber);
 				} catch (NumberFormatException e) {
 					errors.rejectValue("accountNumber", "badFormat",
-							"Account number should be 8 digits");
+							"El codigo de usuario debe ser un numero de 8 digitos");
 				}
 			}
 
 			if (StringUtils.hasText(searchText)) {
 				errors.rejectValue("searchText", "nonEmpty",
-						"Cannot specify account number and search text");
+						"No se puede especificar el texto de busqueda");
 			}
 		} else if (StringUtils.hasText(searchText)) {
 			; // Nothing to do
 		} else {
 			errors.rejectValue("accountNumber", "nonEmpty",
-					"Must specify either an account number or search text");
+					"Debe especificar un número de cuenta o un texto de búsqueda");
 
 		}
 
