@@ -136,12 +136,11 @@ h1 {
     color: #D68910;
     font-weight: 600;
 }
-.check input[type="submit"] {
+#continuar{
     font-size: 1em;
     color: #fff;
     background: #337AB7;
-    width: 100%;
-    padding: 0.8em 0em;
+    padding: 0.8em 100px;
     outline: none;
     border: none;
     border-radius: 5px;
@@ -149,7 +148,7 @@ h1 {
 	text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.63);
 	border-bottom: 3px solid #255c8c;
 }
-.check input[type="submit"]:hover {
+#continuar:hover {
     background:#DD8E1E;
 	border-bottom: 3px solid #bf7b1a;
 	transition: 0.5s all;

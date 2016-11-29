@@ -1,6 +1,9 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
 <head>
+
 
 <head th:replace="header :: copy2"></head>
 
@@ -10,11 +13,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
+
+
 </head>
 <body style="margin:0 !important;">
 <div class="check" style="width: 40%;">
     <div class="check-head">
-       <h2>Metodo de Pago: <span class="header-text">Tarjeta de credito</span></h2>
+       <h2><span class="header-text">Transacción</span></h2>
 	   <small class="strip" style="width: 100%;"> </small>
 	</div>
 	<div class="check-bottom">
@@ -71,9 +76,13 @@
 			  <div class="cvv-para">
 			    <p>Por favor, compruebe este campo</p>
 			  </div>
-			   <div class="clear"> </div> 
+			   
+			   
+			   <div class="clear"> </div>
 			</div>
-			<input type="submit" value="Confirmar Pago"/>
+			<div style="text-align:center;">
+				<a id="continuar" class="col-md-8" th:href="@{/accounts/exito}" value="">Confirmar Pago</a>
+		 	</div>
 		 </form>
 	</div>
 </div>

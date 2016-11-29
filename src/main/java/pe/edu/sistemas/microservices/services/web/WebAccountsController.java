@@ -118,7 +118,19 @@ public class WebAccountsController {
 	}
 	
 	@RequestMapping("/accounts/pagos")
-	public String pasarela() {
+	public String pasarela(Model model, ReturnMonto returnmonto) {
+		String total = returnmonto.getMonto();
+		return procesar(model, total);
+	}
+	
+	@RequestMapping("/accounts/{total}")
+	public String procesar(Model model, @PathVariable("total") String total){
+		model.addAttribute("total", total);
 		return "pasarela";
+	}
+	
+	@RequestMapping("/accounts/exito")
+	public String complete(){
+		return "empty";
 	}
 }
