@@ -1,14 +1,30 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
-
-<head th:replace="header :: copy"></head>
-
-<body>
-	<div  style="text-align:center;">
-		<h1>PAGO EXITOSO!!!!!!</h1>
-		<a th:href="@{/accounts/search}">Regresar</a>
-	</div>
-	<div th:replace="footer :: copy"></div>
+<head>
+<title>Transacción completa</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href='http://fonts.googleapis.com/css?family=Fenix' rel='stylesheet' type='text/css'/>
+<head th:replace="header :: copy2"></head>
+</head>
+<body style="margin: 0;">
+  <div class="wrap">
+	 <div class="main">
+		<h3>Pasarela de Pagos FISI</h3>
+		<h1>Transacción Exitosa</h1>
+		<a th:href="@{/accounts/search}" style="margin-bottom: 20px;"><span>Volver al inicio</span></a>
+		<div class="clearfix"> </div>
+   </div>
+   <div class="clearfix"> </div>
+  </div>
+  
+ 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <script src="js/bootstrap.min.js"></script>
+  <div th:replace="footer :: copy3"></div>
+  <div th:replace="footer :: copy4"></div>
 </body>
 </html>
+

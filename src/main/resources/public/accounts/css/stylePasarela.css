@@ -1,9 +1,5 @@
-
-
-
-/*--login start here--*/
- body{
-   font-size: 100%;
+body{
+	font-family: 'Roboto Condensed', sans-serif;
 }
 a {
   text-decoration: none;
@@ -159,27 +155,7 @@ h1 {
 .clear{
     clear:both;
 }
-/*---copyrights--*/
-.copy-right {
-    margin: 2em 0em 2em 0em;
-}
-.copy-right p {
-    text-align: center;
-    font-size:1em;
-    color:#ff640f;
-    line-height: 1.5em;
-    font-family: 'Quicksand', sans-serif;
-}
-.copy-right p a{
-  color:#1fbfe7;
-}
-.copy-right p a:hover{
-	 color:#ff640f;
-	 transition: 0.5s all;
-  -webkit-transition: 0.5s all;
-  -moz-transition: 0.5s all;
-  -o-transition: 0.5s all;
-}
+
 /*---media queries start here--*/
 @media(max-width:1600px){
 .check {
