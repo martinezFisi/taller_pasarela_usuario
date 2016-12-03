@@ -58,7 +58,7 @@ public class WebAccountsController {
 	public String byNumber(Model model,
 			@PathVariable("accountNumber") String accountNumber) {
 		
-		List<payment> payment = new ArrayList<>();
+		List<payment> payment = new ArrayList();
 	    model.addAttribute("payment", payment);
 		logger.info("web-service byNumber() invoked: " + accountNumber);
 		model.addAttribute("payment", new payment());
