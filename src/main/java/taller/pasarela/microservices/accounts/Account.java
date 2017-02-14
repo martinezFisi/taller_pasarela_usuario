@@ -7,7 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-//commmit probe
+//commmit probe2
 @Entity
 @Table(name = "USUARIO")
 public class Account implements Serializable {
@@ -18,16 +18,16 @@ public class Account implements Serializable {
 
 	@Id
 	protected Long id;
-	
+
 	@Column(name = "code")
 	protected String number;
 
 	@Column(name = "name")
 	protected String owner;
-	
+
 	@Column(name = "email")
 	protected String email;
-	
+
 	@Column(name = "eap")
 	protected String eap;
 
@@ -38,7 +38,7 @@ public class Account implements Serializable {
 		}
 	}
 
-	
+
 	protected Account() {
 	}
 
@@ -62,7 +62,7 @@ public class Account implements Serializable {
 
 	/**
 	 * Set JPA id - for testing and JPA only. Not intended for normal use.
-	 * 
+	 *
 	 * @param id
 	 *            The new id.
 	 */
@@ -100,7 +100,7 @@ public class Account implements Serializable {
 	public void setEap(String eap) {
 		this.eap = eap;
 	}
-	
-	
+
+
 
 }
