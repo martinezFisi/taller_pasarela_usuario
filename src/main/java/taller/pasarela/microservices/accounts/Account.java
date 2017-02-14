@@ -7,7 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-//commmit probe2
+//commmit probe
 @Entity
 @Table(name = "USUARIO")
 public class Account implements Serializable {
